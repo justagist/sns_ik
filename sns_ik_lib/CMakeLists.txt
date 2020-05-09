@@ -21,6 +21,7 @@ find_package(catkin REQUIRED
   roscpp
   std_msgs
   kdl_parser
+  orocos_kdl
 )
 
 catkin_package(

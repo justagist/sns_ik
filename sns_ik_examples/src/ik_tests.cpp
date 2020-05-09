@@ -103,8 +103,8 @@ bool velocityIsScaled(KDL::FrameVel fv1, KDL::FrameVel fv2, double eps, double *
 {
   KDL::Vector v1 = fv1.p.v;
   KDL::Vector v2 = fv2.p.v;
-  double v1norm = v1.Norm();
-  double v2norm = v2.Norm();
+  double v1norm = v1.Norm(0.001);
+  double v2norm = v2.Norm(0.001);
   *scale = v2norm / v1norm;
 
   // calculate inner product of the velocity vectors
@@ -119,8 +119,8 @@ bool velocityIsScaled(KDL::FrameVel fv1, KDL::FrameVel fv2, double eps, double *
   // compare rotation scaling
   KDL::Vector w1 = fv1.M.w;
   KDL::Vector w2 = fv2.M.w;
-  double w1norm = w1.Norm();
-  double w2norm = w2.Norm();
+  double w1norm = w1.Norm(0.001);
+  double w2norm = w2.Norm(0.001);
   double rotScale = w2norm / w1norm;
 
   // Check if the rotation scale matches the linear scale

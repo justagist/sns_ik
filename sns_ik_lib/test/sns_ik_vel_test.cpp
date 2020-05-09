@@ -102,8 +102,8 @@ void checkForwardKinematicVelocity( const KDL::JntArray& q, const KDL::JntArray&
   // compute the error in each component:
   KDL::Vector rot = twistErr.rot;
   KDL::Vector vel = twistErr.vel;
-  *linErr = rot.Norm();
-  *angErr = vel.Norm();
+  *linErr = rot.Norm(0.001);
+  *angErr = vel.Norm(0.001);
 }
 
 /*************************************************************************************************/

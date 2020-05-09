@@ -63,7 +63,7 @@ bool SNSPositionIK::calcPoseError(const KDL::JntArray& q,
 
   // Calculate the offset transform
   *trans = goal.p - pose->p;
-  *errL = trans->Norm();
+  *errL = trans->Norm(0.001);
   KDL::Rotation rot = goal.M * pose->M.Inverse();
   *errR = rot.GetRotAngle(*rotAxis);  // returns [0 ... pi]
   return true;

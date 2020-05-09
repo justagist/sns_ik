@@ -107,7 +107,7 @@ class SNSPositionIK {
      * @param q - joints input
      * @param goal - desired goal frame
      * @param pose - pose based of FK of q
-     * @param errL - translation error magnitude (== trans.Norm())
+     * @param errL - translation error magnitude (== trans.Norm(0.001))
      * @param errR - rotational error magnitude (angle-axis representation)
      * @param trans - translation vector
      * @param rotAxis - unit rotation vector
